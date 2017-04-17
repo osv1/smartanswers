@@ -1,0 +1,51 @@
+<div><br>
+  <div   ng-init="getauser()">
+    <div class="row">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{users.firstName}} {{ users.lastName }}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <ul class="img-list">
+              <li>
+                <img src="image/{{users.userprofile}}" ngf-select="upload($file)" class="img-circle img-responsive" />
+                <span class="text-content" ngf-select="upload($file)"><span>Change Your Profile Image</span></span>
+              </li>
+            </ul>
+            <div class=" col-md-12 col-lg-12 ">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td> First Name:</td>
+                    <td>{{users.firstName}}</td>
+                  </tr>
+                  <tr>
+                    <td>Last Name:</td>
+                    <td>{{ users.lastName }}</td>
+                  </tr>
+                  <!-- <tr>
+                    <td>Password</td>
+                    <td>{{users.password}}</td>
+                  </tr> -->
+                  <tr>
+                    <td>Phone Number</td>
+                    <td>{{users.phone}}<br>
+                    </td>
+                    <tr>
+                      <td>Email</td>
+                      <td><a href="mailto:info@support.com">{{users.email}}</a></td>
+                    </tr>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="btn btn-primary"  ng-controller="tourController" ng-click="editUser()">Update Profile</button>
+            <!--   <button class="btn btn-primary" ui-sref="myques">My Questions</button>
+              <button class="btn btn-primary" ui-sref="myans">My Answers</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

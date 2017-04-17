@@ -1,0 +1,89 @@
+<div class="col-sm-9">
+  <h2>Register</h2>
+  
+  <form name="form" ng-submit="register(user)" role="form" method="POST">
+    <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+      <label for="username">First name</label>
+      <input type="text" name="firstName" id="firstName" placeholder="Enter Your first name" ng-pattern="/^[a-zA-Z]+$/" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-model="user.firstName" ng-minlength="3" ng-maxlength="7" required="" />
+      <div ng-messages="form.firstName.$error" ng-show="form.firstName.$dirty" >
+        <div ng-message="minlength">Name too short</div>
+        <div ng-message="pattern">Invalid Name -it should be of min. 0f 3 and max. of 7 letters.
+        </div>
+        <div ng-message="maxlength">Name too long</div>
+        <div ng-message="required">First name is required</div>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+      <label for="username">Last name</label>
+      <input type="text" name="lastName" id="Text1" class="form-control" ng-pattern="/^[a-zA-Z]+$/" placeholder="Enter Your last name" ng-model="user.lastName" ng-minlength="3" ng-maxlength="7" required =""/>
+      <div ng-messages="form.lastName.$error" ng-show="form.lastName.$dirty" >
+        <div ng-message="required">Last name is required</div>
+        <div ng-message="pattern">Invalid Name -it should be of min. 0f 3 and max. of 7 letters.
+        </div>
+        <div ng-message="maxlength">Name too long</div>
+        <div ng-message="minlength">Name too short</div>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+      <label for="email">Email</label>
+      <input type="email" name="username" id="username" class="form-control" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"  placeholder="Enter Your Email" ng-model="user.email" required />
+      <div ng-messages="form.username.$error" ng-show="form.username.$dirty">
+        <div ng-message="email">Invalid Email</div>
+        <div ng-message="pattern">Invalid Email </div>
+        <div ng-message="required">Email is required </div>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,}$/" ng-minlength="3" ng-maxlength="15"  class="form-control" placeholder="Enter Your password" ng-model="user.password" required />
+      <br>
+      
+      <div ng-messages="form.password.$error" ng-show="form.password.$dirty">
+        <div ng-message="password">Invalid Password</div>
+        <div ng-message="pattern"
+          class="message message-info" style="color: rgb(255, 255, 255); display: block;"><div class="message-inner message-tip message-tip-left-top"><div class="message-text"><p>Password must contain at least 15 characters, including:</p> <ul> <li> letters </li> <li> numbers </li> </ul></div></div></div>
+        </div>
+        <div ng-message="required">Password is required </div>
+      </div>
+      
+      
+      <div class="form-actions">
+        <button type="submit"   ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Submit</button>
+        <a href="#!/login" class="btn btn-link">Cancel</a><br>
+        <hr>
+      </div>
+    </form>
+  </div>
+  <style>
+  </style>
+  <!-- <div class="form-group" ng-class="{ 'has-error': form.confirmPassword.$dirty && form.confirmpassword.$error.required }">
+    <label for="confirmPassword"> Confirm Password</label>
+    <input type="password" name="confirmPassword" id="confirmpassword" class="form-control"  placeholder="Enter Your confirm password" ng-model="user.confirmPassword" required />
+    <span ng-show="form.confirmPassword.$dirty && form.confirmPassword.$error.required" class="help-block"> Confirm Password is required</span>
+  </div>
+  -->
+  <!--<jhuguguygu//////////////////////////////////////////////////////////////////////////////////////////-->
+  <!-- <div ng-class="{'form-error':form.name.$dirty && form.name.$invalid, 'form-group':true}">
+    <input type="text" name="name" ng-model="formData.name" placeholder="Volledige naam" ng-minlength="3" required="" />
+    <div ng-messages="form.name.$error" ng-show="form.name.$dirty" >
+      <div ng-message="minlength">Name too short</div>
+      <div ng-message="required">Required Name</div>
+    </div>
+  </div>
+  
+  <div ng-class="{'form-error':form.email.$dirty && form.email.$invalid, 'form-group':true}">
+    <input type="email" name="email" ng-model="formData.email" placeholder="Email adres" required />
+    <div ng-messages="form.email.$error" ng-show="form.email.$dirty">
+      <div ng-message="email">Invalid Email</div>
+      <div ng-message="required">Required Email</div>
+    </div>
+  </div>
+  
+  <div ng-class="{'form-error':form.tel.$dirty && form.tel.$invalid, 'form-group':true}">
+    <input type="text" name="tel" ng-pattern=/\d{3}-\d{3}-\d{4}/ ng-model="formData.tel" placeholder="Telefoonnummer" required />
+    <div ng-messages="form.tel.$error" ng-show="form.tel.$dirty">
+      <div ng-message="pattern">Valid form: XXX-XXX-XXXX</div>
+      <div ng-message="required">Required Phone</div>
+    </div>
+  </div>        -->
+  <!--<jhuguguygu//////////////////////////////////////////////////////////////////////////////////////////-->

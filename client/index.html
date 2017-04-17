@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="myController">
+  <head>
+    <title ng-if="isadminlogin">Dashboard</title>
+    <title >Smartanswers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/trix.css">
+    <link rel="icon" type="image/x-icon" href="./lib/favicon.ico">
+    <link rel="stylesheet" href="smart.css">
+    <link rel="stylesheet" href="angular-toastr.css">
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./lib/angular.min.js"></script>
+    <script src="./lib/angular-toastr.js"></script>
+    <script src="./lib/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./lib/sweetalert.min.css"/>
+    <script src="./lib/ngBootbox.js"></script>
+    <script src="./lib/bootbox.js"></script>
+    <script src="./lib/sweetalert.js"></script>
+    <script src="./lib/angular-messages.js"></script>
+    <script src="./lib/dirPagination.js"></script>
+    <script src="./lib/angular-resource.min.js"></script>
+    <script src="./lib/angular-ui-router.js"></script>
+    <script src="./lib/ng-file-upload.min.js"></script>
+    <script src="./lib/ng-file-upload-shim.min.js"></script>
+     <script src="./lib/1angular-trix.min.js"></script>
+    <script src="./lib/trix.js"></script>
+    <script src="./lib/trix1-core.js"></script>
+    <script src="./lib/angular-sanitize.js"></script>
+    <script src="https://cdn.ckeditor.com/4.6.1/standard-all/ckeditor.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body >
+    <div ui-view="header"></div>
+    <div class="container-fluid text-center">
+      <div class="row content">
+        <div class="col-sm-2 sidenav">
+          <div class="well">
+            <p><a ui-sref="userlist"   ng-if="isadminlogin">Users</a></p>
+            <p><a ui-sref="contactuslist"  ng-if="isadminlogin">Contacts</a></p>
+            <p><a ui-sref="askquestions"  class="btn btn-primary" ng-if="isuserlogin">Ask Question</a></p>
+            <p><a ui-sref="askquestions"  class="btn btn-primary" ng-if="!(isuserlogin || isadminlogin)">Ask Question</a></p>
+          </div>
+          <div class="well">
+            <p><a ui-sref="questionlist"  ng-if="isadminlogin">Questions and Answers</a></p>
+            <p><a ui-sref="documentation" class="btn btn-primary" ng-if="isuserlogin">Documentation</a></p>
+            <p><a ui-sref="documentation"  class="btn btn-primary" ng-if="!isuserlogin && !isadminlogin">Documentation</a></p>
+          </div>
+        </div>
+        <div class="col-sm-8 text-left">
+          <div ui-view="content"></div>
+        </div>
+        <div class="col-sm-2 sidenav">
+          <div class="well">
+            <p><a class="btn btn-primary" ui-sref="workhere">Work Here</a></p>
+          </div>
+          <div class="well">
+            <p><a  class="btn btn-primary" ui-sref="tour">Tour</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ui-view="footer"></div>
+  </body>
+</html>

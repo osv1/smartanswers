@@ -1,0 +1,55 @@
+<div ng-init="loadanswer()" ng-controller="askController">
+  <form><center><h3>All Questions</h3></center>
+    
+    <div class="w3-twothird w3-container">
+      <h3 class="w3-text-teal"></h3>
+      <table>
+        
+        <br>
+        <div dir-paginate="profile in answers |filter:search|itemsPerPage:5">
+          <div class="well well-lg">
+            <a ui-sref="answerpost({id:profile._id})" ng-controller="tourController">
+            <span style="font-size: 20px;" > {{ profile.title }}</a><br>
+               <span style="font-size: 20px;" > {{ profile.tags }}</a><br>
+
+            
+            <span style="font-size: 15px;">  Answers - {{profile.answer.length}}<br></span>
+            <hr>
+           
+
+           <!-- <div class="container"  ng-controller="vote">
+  <div class="content">
+    <a href="#" ng-click="doVote()">
+      <i class="glyphicon" ng-class="(like.userVotes==1) ? 'glyphicon-heart' : 'glyphicon-heart-empty'"></i>
+      <span ng-model="like.votes">{{like.votes}}</span>
+    </a>
+  </div>
+</div> -->
+
+
+
+<!-- <div ng-controller="vote"> 
+    <a ng-click="doVote()" ng -model="like.votes">
+             Like {{like.votes}}
+    </a>
+ 
+</div> -->
+            <div class="col-xs-1">
+
+              <span><img src="image/{{profile.name.userprofile}}" style="width:30px;padding-top:8px;padding-bottom:8px;" class="img-circle img-responsive"></span></div>
+              <span style="font-size: 10px;">   asked by: <a ui-sref="">{{profile.name.firstName}} {{profile.name.lastName}}</a>, {{profile.date |date:"MM/dd/yyyy 'at' h:mma"}},<br>
+              E-Mail - {{profile.name.email}}
+            </span><br>
+          </div>
+        </div>
+        <dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" >
+        </dir-pagination-controls>
+      </div>
+    </div>
+  </div>
+</table>
+</div>
+</div>

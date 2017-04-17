@@ -1,0 +1,36 @@
+<div  ng-controller="askController" ng-init="getauser()">
+  <header ng-controller="myController">
+    <div data-role="header">
+      <nav class="navbar navbar-inverse navbar-fixed">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          <img src="./lib/logo.png"  style="width:30px;padding-top:8px;padding-bottom:8px;" >
+            <a class="navbar-brand" ui-sref="homeprivate" ng-if="isuserlogin">Smartanswers</a>
+            <a class="navbar-brand" ui-sref="homeprivate" ng-if="!isuserlogin && !isadminlogin">Smartanswers</a>
+            
+            <a class="navbar-brand"  ui-sref="Smartanswers" ng-if="isadminlogin">Dashboard</a>
+            <a class="navbar-brand"  ui-sref="editpages" ng-if="isadminlogin">Content Managemant</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav" ng-if="!isadminlogin">
+              <li><a ui-sref="topquestion" ng-if="isuserlogin">Top Question</a></li>
+              <li><a ui-sref="about">About</a></li>
+              <li><a ui-sref="help">Help</a></li>
+              <li><a ui-sref="contact">Contact Us</a></li>
+            </ul>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="login" ng-if="!isuserlogin && !isadminlogin" >Sign in</a></li>
+            <li><a  href="#" ng-click="logout()" ng-if="isuserlogin||isadminlogin">Logout</a></li>
+            <li><a ui-sref="welcome" ng-if="isuserlogin"> Welcome {{users.firstName}}</a></li>
+            <li><img src="image/{{users.userprofile}}" ui-sref="welcome" ng-if="isuserlogin"
+              style="width:30px;padding-top:8px;
+            padding-bottom:8px;" class="img-circle  img" /></li>
+            
+            <li><a ui-sref="register" ng-if="!isuserlogin && !isadminlogin" >Signup</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

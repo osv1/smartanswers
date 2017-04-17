@@ -1,0 +1,82 @@
+
+<div ng-init="getUser()" ng-app="app" ng-controller="tourController">
+<h2>Users List</h2>
+<div>
+  <input type="search" id="mySearch"  ng-model="search" placeholder="search..">
+  <table>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Email</td>
+      <td>Action</td>
+    </tr>
+    <tr dir-paginate="profile in users |filter:search|itemsPerPage:5">
+      <td>
+        <input type="text" ng-model="profile.firstName" ng-show="profile.editable">
+        <span ng-hide="profile.editable">{{ profile.firstName }}</span>
+      </td>
+      <td>
+        <input type="text" ng-model="profile.lastName" ng-show="profile.editable">
+        <span ng-hide="profile.editable">{{ profile.lastName }}</span>
+      </td>
+      <td>
+        <input type="text" ng-model="profile.email" ng-show="profile.editable">
+        <span ng-hide="profile.editable">{{ profile.email }}</span>
+      </td>
+      <td>
+        <button ng-click="deleteUser(profile._id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <dir-pagination-controls
+  max-size="5"
+  direction-links="true"
+  boundary-links="true" >
+  </dir-pagination-controls>
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      <!--<td>
+          <span ng-click="edit($index)" ng-hide="profile.editable">Edit</span>
+          <span ng-click="save($index)" ng-show="profile.editable">Save</span>
+       
+        </td>-->
+ <!--<td>
+          <input type="text" ng-model="profile.id" ng-show="profile.editable">
+          <span ng-hide="profile.editable"></span>
+        </td>-->
+        <!--<tr>
+<td>email</td>
+<td>firstName</td>
+<td>lastName</td>
+<td>password</td>
+<td>confirmPassword</td>
+<td>phone</td>
+<td>created</td>
+<td>question</td>
+<td>age</td>
+
+</tr>-->

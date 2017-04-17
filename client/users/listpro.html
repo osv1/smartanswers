@@ -1,0 +1,54 @@
+<div ng-init="userService.getUsers() " ng-app="app" ng-controller="tourController">
+
+<button class="button"> + Add New</button>
+
+<input type="search" id="mySearch" placeholder="first Name">
+<input type="search" id="mySearch" placeholder="Last name">
+<input type="search" id="mySearch" placeholder="Email">
+<button onclick="myFunction()"> Search </button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+    var x = document.getElementById("mySearch").placeholder;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+
+
+
+
+
+
+
+<div class="container">
+             
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+       <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="profile in users">
+      
+        <td> <input type="text" ng-model="profile.email" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.email }}</span></td>
+        <td><input type="text" ng-model="profile.firstName" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.firstName }}</span></td>
+        <td><input type="text" ng-model="profile.lastName" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.lastName }}</span></td>
+          <td>
+            <button ng-click="deleteUser(profile._id)">Delete</button>
+            <button ng-click="editUser(profile._id)">Edit</button>
+        </td>
+
+      
+      </tr>
+    </tbody>
+  </table>
+</div>
+

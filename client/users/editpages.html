@@ -1,0 +1,19 @@
+<center><h3>Content Management</h3></center>
+<div ng-init="getcmsedit()" ng-controller="askController">
+<hr>
+<br>
+
+
+<div style="border-style: groove;">
+<!-- <input type="text" ng-model="aboutus"> -->
+
+<trix-editor ng-model-options="{ updateOn: 'blur' }" spellcheck="false" class="trix-content" ng-model="aboutus" angular-trix trix-initialize="trixInitialize(e, editor);" trix-change="trixChange(e, editor);" trix-selection-change="trixSelectionChange(e, editor);" trix-focus="trixFocus(e, editor);" trix-blur="trixBlur(e, editor);" trix-file-accept="trixFileAccept(e, editor);" trix-attachment-add="trixAttachmentAdd(e, editor);" trix-attachment-remove="trixAttachmentRemove(e, editor);" placeholder="Write something.."></trix-editor>
+
+
+<br>
+<div class="form-actions">
+<br>
+		<center><button ng-click="editcms(aboutus)" ng-disabled="form.$invalid " class="btn btn-primary">Update</button></center>
+	</div>
+	</div>
+

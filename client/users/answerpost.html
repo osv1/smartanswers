@@ -1,0 +1,44 @@
+
+<div ng-app="app" ng-init="showQA()" ng-controller="tourController">
+	<div>
+		<span style="font-size: 20px;" >
+			<div ng-repeat="user in users"><br>
+				<p>{{user.title}}</p></span>
+				<p>{{user.tags}}<hr>
+				<span style="font-size: 15px;" > 
+				<p ng-bind-html="user.questionw"></p>
+				<div class="col-xs-1">
+                 <span><img src="image/{{user.name.userprofile}}" style="width:30px;padding-top:8px;padding-bottom:8px;" class="img-circle img-responsive"></span></div>
+              <span style="font-size: 10px;">   asked by: <a ui-sref="">{{user.name.firstName}} {{user.name.lastName}}</a>, {{user.date |date:"MM/dd/yyyy 'at' h:mma"}},<br>
+              E-Mail - {{user.name.email}}
+            </span>
+			<br>
+			<p style="font-size: 15px;">  Answers - {{user.answer.length}}</p>
+			<hr>
+			<span style="font-size: 15px;" >
+				<div ng-repeat="ans in user.answer"><p><b>Answer:&nbsp;&nbsp;&nbsp;&nbsp;</b><p ng-bind-html="ans.answer"</p></p><p>
+				<div class="col-xs-1">
+                 <span><img src="image/{{ans.nameans.userprofile}}" style="width:30px;padding-top:8px;padding-bottom:8px;" class="img-circle img-responsive"></span></div>
+              <span style="font-size: 10px;">   answered by: <a ui-sref="">{{ans.nameans.firstName}} {{ans.nameans.lastName}}</a>, {{user.date |date:"MM/dd/yyyy 'at' h:mma"}},<br>
+              E-Mail - {{ans.nameans.email}}
+            </span>
+				</p></div>
+			</span>
+			<hr>
+					<p><h4>Can you help? Smartanswers depends on everyone sharing their knowledge. If you're able to answer this question, please do!</h4>
+				<br>
+			<h4>Your Answer</h4></p>
+			<div ng-controller="askController">
+				<form name="form" ng-submit="postanswer(user._id,answer)" role="form" method="POST">
+					<div>
+						
+					<trix-editor ng-model-options="{ updateOn: 'blur' }" spellcheck="false" class="trix-content" ng-model="answer" angular-trix trix-initialize="trixInitialize(e, editor);" trix-change="trixChange(e, editor);" trix-selection-change="trixSelectionChange(e, editor);" trix-focus="trixFocus(e, editor);" trix-blur="trixBlur(e, editor);" trix-file-accept="trixFileAccept(e, editor);" trix-attachment-add="trixAttachmentAdd(e, editor);" trix-attachment-remove="trixAttachmentRemove(e, editor);" placeholder="Write something.."></trix-editor>
+				</div><br><hr>
+				<div class="form-actions">
+					<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Post Your Answer</button>
+				</div>
+			</form><hr>
+		</div>
+	</div>
+</div>
+</div>

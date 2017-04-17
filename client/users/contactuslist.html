@@ -1,0 +1,47 @@
+<toaster-container toaster-options="{'time-out': 7000}"></toaster-container>
+<div ng-init="getcontact()" ng-app="app" ng-controller="tourController">
+  <input type="search" id="mySearch"  ng-model="search" placeholder="search..">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Message</td>
+    </tr>
+    <tr dir-paginate="profile in users |filter:search|itemsPerPage:5">
+      <td>
+        <input type="text" ng-model="profile.name" ng-show="profile.editable">
+        <span ng-hide="profile.editable">{{ profile.name }}</span>
+      </td>
+      
+      <td>
+        <input type="text" ng-model="profile.email" ng-show="profile.editable">
+        <span ng-hide="profile.editable">{{ profile.email }}</span>
+      </td>
+      <td>
+        <input type="text" ng-model="profile.message" ng-show="profile.editable">
+        <span ng-hide="profile.editable">{{ profile.message }}</span>
+      </td>
+      <td>
+        <button ng-click="deletecontact(profile._id)">Delete</button>
+        </td>
+      </td>
+    </tr>
+  </table>
+  <dir-pagination-controls
+  max-size="5"
+  direction-links="true"
+  boundary-links="true" >
+  </dir-pagination-controls>
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+

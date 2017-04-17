@@ -1,0 +1,49 @@
+<div><center><h3>Want to know More?</h3><h4>
+	If you have any query regarding this website, please do not hesitate to send us a message. We aim to reply within 24 hours.</h4></center><hr>
+	<div class="col-sm-7" >
+		
+		<form name="form" ng-submit="contact(user)"  role="form" method="post">
+			<div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+				<label for="name">Name</label>
+				
+				<input type="text" class="form-control" id="name" name="name" ng-model="user.name" placeholder="First & Last Name" value="" required>
+				<div ng-messages="form.name.$error" ng-show="form.name.$dirty">
+					<div ng-message="name">Invalid Name</div>
+					<div ng-message="required">Name is required </div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+					<label for="email" >Email</label>
+					<input type="email" class="form-control" id="email" name="email" ng-model="user.email" placeholder="example@domain.com" value="" required>
+					<div ng-messages="form.email.$error" ng-show="form.email.$dirty">
+						<div ng-message="email">Invalid Email</div>
+						<div ng-message="required">Email is required </div>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error': form.message.$dirty && form.message.$error.required }">
+					<label for="message">Message</label>
+					<textarea class="form-control" rows="4" placeholder="Please Enter Your Message...." ng-model="user.message" name="message" required ></textarea>
+					<div ng-messages="form.message.$error" ng-show="form.message.$dirty">
+						<div ng-message="message">Invalid Message</div>
+						<div ng-message="required">Message is required </div>
+					</div>
+				</div>
+			</div>
+			<div class="form-actions">
+				<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Submit</button>
+				<br/>
+				<br/>
+			</div>
+		</form>
+	</div>
+	<div class="col-sm-4">
+		<p>
+			Rahul Gupta<br/>
+			smartdata Enterprises Pvt. Ltd.<br/>
+			Nagpur<br/>
+			Phone: +91 9927955351<br/>
+			Email: rahul.gupta@smartdatainc.net<br/>
+			Web: www.smartanswers.com<br/>
+		</p>
+	</div>
+	
+</div>

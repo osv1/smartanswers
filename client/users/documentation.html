@@ -1,0 +1,81 @@
+<h3>Documentation ?</h3>
+<hr>
+<form>
+	
+	<h4>Pick a topic:</h4>
+	<input type="radio" ng-model="myVar" value="angularjs">Mean Stack
+	<input type="radio" ng-model="myVar" value="android">Android
+	
+	<input type="radio" ng-model="myVar" value="NETFramework">.NET Framework
+	<input type="radio" ng-model="myVar" value="Django">Django
+	<input type="radio" ng-model="myVar" value="CSS">CSS
+	<input type="radio" ng-model="myVar" value="HTML">HTML
+	
+</form>
+<hr>
+<div ng-switch="myVar">
+	<div ng-switch-when="angularjs">
+		<a ui-sref=".angularjs" class="btn btn-primary">Click to Read about with Mean Stack</a>
+		<hr>
+		<div class="col-sm-12 text-left">
+			
+			<div ui-view ></div>
+			
+		</div>
+	</div>
+	
+</div>
+<div ng-switch="myVar">
+	<div ng-switch-when="android">
+		<a ui-sref=".android" class="btn btn-primary">Click to Read about with Android
+		</a>
+		<hr>
+		<div class="col-sm-12 text-left">
+			
+			<div ui-view ></div>
+			
+		</div>
+	</div>
+</div>
+
+<div ng-switch="myVar">
+	<div ng-switch-when="NETFramework">
+		<h4> <a ui-sref=".NETFramework" class="btn btn-primary"> Click to Read about with .NET Framework
+		</a></h4><hr>
+		<div class="col-sm-12 text-left">
+			
+			<div ui-view ></div>
+		</div>
+	</div>
+</div>
+<div ng-switch="myVar">
+	<div ng-switch-when="Django">
+		<h4> <a ui-sref=".Django" class="btn btn-primary"> Click to Read about with Django
+		</a></h4><hr>
+		<div class="col-sm-12 text-left">
+			
+			<div ui-view ></div>
+		</div>
+	</div>
+</div>
+<div ng-switch="myVar">
+	<div ng-switch-when="CSS">
+		<h4> <a ui-sref=".CSS" class="btn btn-primary">Click to Read about with CSS
+		</a></h4><hr>
+		<div class="col-sm-12 text-left">
+			
+			<div ui-view ></div>
+		</div>
+	</div>
+</div>
+<div ng-switch="myVar">
+	<div ng-switch-when="HTML">
+		<h4> <a ui-sref=".HTML" class="btn btn-primary"> Click to Read about with HTML
+		</a></h4><hr>
+		<div class="col-sm-12 text-left">
+			
+			<div ui-view ></div>
+			
+		</div>
+	</div>
+</div>
